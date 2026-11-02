@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" class="access-pending">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills Training, Nutrition &amp; Healthy Eating Reviewer</title>
+<style>
+:root{--bg:#04070f;--bg2:#0a0f1f;--txt:#eef2ff;--mut:#8f9cc4;--ac:#2dd4bf;--ac2:#60a5fa;--ac3:#f59e0b;--ok:#34d399;--bad:#fb7185;--warn:#fbbf24;--line:rgba(255,255,255,.09);--glass:rgba(255,255,255,.045);--glass2:rgba(255,255,255,.08);--r:22px}
+[data-theme=violet]{--ac:#a78bfa;--ac2:#f472b6;--ac3:#22d3ee}
+[data-theme=rose]{--ac:#fb7185;--ac2:#fbbf24;--ac3:#a78bfa}
+[data-theme=sky]{--ac:#38bdf8;--ac2:#818cf8;--ac3:#34d399}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:90px}
+body{margin:0;font-family:'Inter','Segoe UI',system-ui,-apple-system,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;min-height:100vh;overflow-x:hidden}
+::selection{background:var(--ac);color:#02060c}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:linear-gradient(var(--ac),var(--ac2));border-radius:10px}::-webkit-scrollbar-track{background:transparent}
+button{font-family:inherit}
+
+/* ---------- background ---------- */
+#fx{position:fixed;inset:0;z-index:-3;width:100%;height:100%}
+.aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(110px);opacity:.32;animation:drift 22s ease-in-out infinite alternate;will-change:transform}
+.aurora i:nth-child(1){background:var(--ac2);top:-25%;left:-15%}
+.aurora i:nth-child(2){background:var(--ac);bottom:-30%;right:-15%;animation-delay:-8s}
+.aurora i:nth-child(3){background:var(--ac3);top:30%;left:35%;width:34vmax;height:34vmax;opacity:.14;animation-delay:-14s}
+.grid{position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);opacity:.5}
+@keyframes drift{to{transform:translate(9vmax,7vmax) scale(1.18) rotate(20deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.95) translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{opacity:.5;transform:scale(1.05)}}
+@keyframes shine{to{background-position:200% center}}
+
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2),var(--ac3));z-index:80;box-shadow:0 0 16px var(--ac)}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:10px;padding:12px clamp(14px,3vw,34px);background:rgba(4,7,15,.55);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto;font-weight:800;font-size:18px;letter-spacing:.3px}
+.logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#04070f;font-weight:900;font-size:15px;box-shadow:0 0 24px color-mix(in srgb,var(--ac) 60%,transparent);animation:pulse 3.5s ease-in-out infinite}
+.brand small{display:block;font-weight:500;font-size:11px;color:var(--mut);letter-spacing:1.5px;text-transform:uppercase;margin-top:-3px}
+.tabs{display:flex;gap:4px;background:var(--glass);border:1px solid var(--line);padding:4px;border-radius:14px}
+.tab{background:none;border:0;color:var(--mut);padding:8px 16px;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;transition:.25s}
+.tab:hover{color:var(--txt)}
+.tab.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#04070f;box-shadow:0 4px 18px color-mix(in srgb,var(--ac) 40%,transparent)}
+.dots{display:flex;gap:7px;align-items:center}
+.dots b{width:17px;height:17px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:.2s}
+.dots b:hover{transform:scale(1.2)}
+.dots b.on{border-color:#fff;box-shadow:0 0 12px currentColor}
+.ibtn{background:var(--glass);border:1px solid var(--line);color:var(--txt);padding:8px 13px;border-radius:12px;cursor:pointer;font-weight:600;font-size:13px;transition:.25s}
+.ibtn:hover{border-color:var(--ac);box-shadow:0 0 18px color-mix(in srgb,var(--ac) 35%,transparent);transform:translateY(-1px)}
+
+/* ---------- buttons ---------- */
+.btn{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#04070f;border:0;padding:12px 22px;border-radius:14px;font-weight:800;cursor:pointer;font-size:15px;box-shadow:0 6px 24px color-mix(in srgb,var(--ac) 35%,transparent);transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 34px color-mix(in srgb,var(--ac2) 50%,transparent)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}
+.btn.ghost{background:var(--glass);color:var(--txt);border:1px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--ac);box-shadow:0 0 22px color-mix(in srgb,var(--ac) 30%,transparent)}
+.btn.sm{padding:8px 14px;font-size:13px;border-radius:11px}
+.btn.big{padding:16px 34px;font-size:17px;border-radius:16px}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(14px,3vw,34px) 80px}
+.hide{display:none!important}
+
+/* ---------- hero ---------- */
+.hero{padding:60px 0 34px;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:30px;background:var(--glass);border:1px solid var(--line);font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ac);font-weight:700}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 12px var(--ok);animation:pulse 2s infinite}
+.hero h2{font-size:clamp(38px,6vw,70px);line-height:1.04;margin:18px 0 14px;font-weight:900;letter-spacing:-1.5px}
+.grad{background:linear-gradient(90deg,var(--ac),var(--ac2),var(--ac3),var(--ac));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite}
+.hero p{color:var(--mut);font-size:18px;max-width:560px;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.term{background:rgba(3,5,14,.8);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 60px color-mix(in srgb,var(--ac2) 18%,transparent);transform:perspective(1100px) rotateY(-7deg) rotateX(3deg);transition:transform .5s}
+.term:hover{transform:perspective(1100px) rotateY(0) rotateX(0)}
+.bar3{display:flex;gap:7px;align-items:center;padding:12px 15px;background:rgba(255,255,255,.04);border-bottom:1px solid var(--line)}
+.bar3 i{width:12px;height:12px;border-radius:50%}
+.bar3 i:nth-child(1){background:#ff5f57}.bar3 i:nth-child(2){background:#febc2e}.bar3 i:nth-child(3){background:#28c840}
+.bar3 span{margin-left:auto;font-size:12px;color:var(--mut);font-family:Consolas,monospace}
+.term pre{margin:0;padding:20px;min-height:250px;font-family:Consolas,'Fira Code',monospace;font-size:14px;line-height:1.75;white-space:pre-wrap;color:#cbd5ff}
+.tg{color:var(--ac3);font-weight:700}.nu{color:var(--ac)}.st{color:#a7f3d0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 10px}
+.stat{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:16px 18px;backdrop-filter:blur(10px);transition:.3s}
+.stat:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--ac) 50%,transparent)}
+.stat b{display:block;font-size:30px;font-weight:900;line-height:1.1}
+.stat span{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:1.2px}
+
+/* ---------- layout ---------- */
+.layout{display:grid;grid-template-columns:290px 1fr;gap:30px;align-items:start;margin-top:28px}
+#side{position:sticky;top:88px;background:var(--glass);border:1px solid var(--line);border-radius:var(--r);padding:16px;backdrop-filter:blur(14px);max-height:calc(100vh - 110px);overflow:auto}
+#side h4{margin:2px 6px 10px;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut)}
+#side a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:12px;color:var(--mut);text-decoration:none;font-size:14px;font-weight:600;transition:.2s;border:1px solid transparent}
+#side a em{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:800;background:var(--glass2);transition:.2s}
+#side a:hover{color:var(--txt);background:var(--glass)}
+#side a.on{color:var(--txt);background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 18%,transparent),color-mix(in srgb,var(--ac2) 18%,transparent));border-color:color-mix(in srgb,var(--ac) 35%,transparent)}
+#side a.on em{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#04070f}
+#side a.done em{background:var(--ok);color:#03150d}
+#side a.done em::after{content:"\2713"}
+#side a.done em span{display:none}
+.mod{margin:14px 6px 4px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ac);font-weight:800}
+
+/* ---------- topic cards ---------- */
+.card{position:relative;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:var(--r);padding:clamp(18px,3vw,30px);margin:0 0 24px;border:1px solid var(--line);box-shadow:0 16px 50px rgba(0,0,0,.35);transition:border-color .3s,box-shadow .3s;overflow:hidden}
+.card:hover{border-color:color-mix(in srgb,var(--ac) 40%,transparent)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.th{display:flex;align-items:flex-start;gap:16px;margin-bottom:16px}
+.num{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-weight:900;font-size:20px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#04070f;box-shadow:0 8px 26px color-mix(in srgb,var(--ac) 40%,transparent)}
+.th h3{margin:0;font-size:clamp(18px,2.4vw,24px);line-height:1.3;font-weight:800}
+.th small{display:block;color:var(--mut);font-weight:600;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:2px}
+ul.pts{list-style:none;padding:0;margin:0}
+ul.pts li{position:relative;padding:11px 14px 11px 42px;margin:8px 0;background:rgba(255,255,255,.025);border:1px solid transparent;border-radius:14px;transition:.25s}
+ul.pts li::before{content:"";position:absolute;left:16px;top:20px;width:9px;height:9px;border-radius:3px;background:linear-gradient(135deg,var(--ac),var(--ac3));transform:rotate(45deg)}
+ul.pts li:hover{background:rgba(255,255,255,.055);border-color:var(--line);transform:translateX(4px)}
+code{background:color-mix(in srgb,var(--ac) 12%,transparent);border:1px solid color-mix(in srgb,var(--ac) 28%,transparent);padding:1px 8px;border-radius:8px;color:#fde68a;font-family:inherit;font-weight:700;font-size:.95em}
+b{color:#fff}
+.sh{margin:22px 0 10px;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ac);font-weight:800;display:flex;align-items:center;gap:10px}
+.sh::after{content:"";flex:1;height:1px;background:var(--line)}
+.fg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.fc{padding:13px 15px;border-radius:15px;background:rgba(255,255,255,.035);border:1px solid var(--line);transition:.25s}
+.fc:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--ac) 50%,transparent);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.fc b{display:block;color:var(--ac);font-size:13.5px;margin-bottom:2px}
+.fc span{font-size:14.5px;color:#d6dcf7;line-height:1.5;display:block}
+.tl{position:relative;margin:4px 0 4px 8px;padding-left:28px;border-left:2px solid color-mix(in srgb,var(--ac) 40%,transparent)}
+.ti{position:relative;margin:0 0 14px;padding:11px 14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid transparent;transition:.25s}
+.ti::before{content:"";position:absolute;left:-37px;top:17px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--ac);box-shadow:0 0 12px var(--ac)}
+.ti:hover{background:rgba(255,255,255,.06);border-color:var(--line);transform:translateX(4px)}
+.ti .yr{display:inline-block;margin-bottom:3px;padding:1px 10px;border-radius:20px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#04070f;font-weight:800;font-size:12px}
+.ti div{font-size:15px;color:#dbe1fa}
+
+.eli{margin-top:22px}
+.e5{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s,opacity .4s,margin .4s,padding .4s;background:linear-gradient(135deg,color-mix(in srgb,var(--ac2) 30%,transparent),color-mix(in srgb,var(--ac3) 20%,transparent));border:1px solid color-mix(in srgb,var(--ac2) 45%,transparent);border-radius:16px;padding:0 18px;font-size:15.5px}
+.e5.on{max-height:420px;opacity:1;margin-top:14px;padding:16px 18px}
+.mark{float:right}
+.mark.done{background:linear-gradient(135deg,var(--ok),#10b981);color:#03150d;border:0}
+
+/* ---------- exam home ---------- */
+.xh{max-width:760px;margin:48px auto 0}
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}
+.rule{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:16px;padding:14px}
+.rule b{font-size:26px;line-height:1}
+.rule span{font-size:14.5px;color:#cfd6f5}
+.warnbox{background:linear-gradient(135deg,rgba(251,191,36,.16),rgba(251,113,133,.14));border:1px solid rgba(251,191,36,.45);border-radius:16px;padding:14px 16px;margin:14px 0;font-weight:600}
+.xh h2{font-size:34px;margin:0 0 4px;font-weight:900}
+
+/* ---------- exam ---------- */
+#exam{max-width:1000px;margin:0 auto;padding:22px clamp(14px,3vw,24px) 60px}
+.xtop{display:flex;align-items:center;gap:18px;margin-bottom:16px;flex-wrap:wrap}
+.ring{position:relative;width:96px;height:96px;flex:none}
+.ring svg{transform:rotate(-90deg);width:100%;height:100%}
+.ring circle{fill:none;stroke-width:8;stroke-linecap:round}
+.ring .tr{stroke:var(--glass2)}
+.ring .pr{stroke:url(#gr);stroke-dasharray:326.7;stroke-dashoffset:0;transition:stroke-dashoffset .5s linear}
+.ring.low .pr{stroke:var(--bad)}
+.timer{position:absolute;inset:0;display:grid;place-items:center;font-family:Consolas,monospace;font-weight:800;font-size:21px}
+.ring.low .timer{color:var(--bad)}
+.xinfo{flex:1;min-width:200px}
+.xinfo b{font-size:20px}
+.pbar{height:8px;background:var(--glass2);border-radius:9px;overflow:hidden;margin-top:9px}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2),var(--ac3));transition:width .4s;box-shadow:0 0 14px var(--ac)}
+.qnav{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:10px;margin:16px 0 6px}
+.qnav button{min-height:44px;border-radius:14px;background:var(--glass);color:var(--mut);border:1px solid var(--line);cursor:pointer;font-size:14px;font-weight:700;transition:.2s;position:relative}
+.qnav button:hover{border-color:var(--ac);color:var(--txt)}
+.qnav button.done{background:linear-gradient(135deg,var(--ok),#10b981);color:#03150d;border:0}
+.qnav button.fl::after{content:"\2691";position:absolute;top:-6px;right:-3px;font-size:12px;color:var(--warn)}
+.qnav button.cur{outline:2px solid var(--ac);outline-offset:2px;box-shadow:0 0 18px var(--ac)}
+.qcard{padding:clamp(18px,3vw,32px);animation:pop .35s both}
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.qtag{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ac);font-weight:800}
+.flag{margin-left:auto}
+.flag.on{background:rgba(251,191,36,.18);border-color:var(--warn);color:var(--warn)}
+.qtext{font-size:clamp(18px,2.4vw,23px);font-weight:700;line-height:1.5;margin:0 0 20px}
+.opts{counter-reset:o;display:grid;gap:11px}
+.opt{counter-increment:o;display:flex;align-items:center;gap:14px;text-align:left;width:100%;background:rgba(255,255,255,.035);color:var(--txt);padding:14px 16px;border:1px solid var(--line);border-radius:16px;font-size:16px;font-weight:600;cursor:pointer;transition:.22s;animation:rise .4s both}
+.opt:nth-child(2){animation-delay:.05s}.opt:nth-child(3){animation-delay:.1s}.opt:nth-child(4){animation-delay:.15s}
+.opt::before{content:counter(o,upper-alpha);flex:none;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:var(--glass2);font-weight:900;color:var(--ac);transition:.22s}
+.opt:hover{transform:translateX(7px);border-color:var(--ac);box-shadow:0 0 24px color-mix(in srgb,var(--ac) 25%,transparent)}
+.opt.sel{border-color:var(--ac);background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 22%,transparent),color-mix(in srgb,var(--ac2) 22%,transparent));box-shadow:0 0 30px color-mix(in srgb,var(--ac) 30%,transparent)}
+.opt.sel::before{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#04070f}
+.xnav{display:flex;gap:10px;margin-top:20px;align-items:center;flex-wrap:wrap}
+.xnav .sp{flex:1}
+.kb{font-size:12px;color:var(--mut)}
+.kb kbd{background:var(--glass2);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-family:Consolas,monospace}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:rgba(2,3,10,.7);backdrop-filter:blur(8px);animation:rise .25s both;padding:18px}
+.mbox{max-width:440px;width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 40px 100px rgba(0,0,0,.7);animation:pop .3s both;text-align:center}
+.mbox h3{margin:0 0 8px;font-size:24px}
+.mbox p{color:var(--mut);margin:0 0 20px}
+.mbox .row{display:flex;gap:10px;justify-content:center}
+
+/* ---------- results ---------- */
+.res{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.sring{position:relative;width:170px;height:170px;flex:none}
+.sring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.sring circle{fill:none;stroke-width:11;stroke-linecap:round}
+.sring .tr{stroke:var(--glass2)}
+.sring .pr{stroke:url(#gr2);stroke-dasharray:471.2;stroke-dashoffset:471.2;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1)}
+.sring .mid{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.sring .mid b{font-size:44px;font-weight:900;line-height:1}
+.sring .mid span{display:block;font-size:12px;color:var(--mut);letter-spacing:1px}
+.rtxt h3{font-size:30px;margin:0 0 6px;font-weight:900}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.chip{padding:6px 14px;border-radius:30px;border:1px solid var(--line);background:var(--glass);font-size:13px;font-weight:700;cursor:pointer;color:var(--mut);transition:.2s}
+.chip.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#04070f;border:0}
+.ak{margin:10px 0;padding:14px 16px;border-left:4px solid var(--ok);background:rgba(255,255,255,.035);border-radius:14px;animation:rise .4s both}
+.ak.x{border-left-color:var(--bad)}
+.ak p{margin:0 0 6px;font-weight:600}
+.ak .y{font-size:14px;color:var(--mut)}
+.ak .c{font-size:14px;color:var(--ok);font-weight:800}
+.ak .rv2{font-size:12px;color:var(--mut);margin-top:4px}
+.note{color:var(--mut);font-size:14px}
+.callout{margin:18px 0 4px;padding:14px 16px;border-radius:16px;border-left:4px solid var(--ac3);background:color-mix(in srgb,var(--ac3) 11%,transparent);font-size:15.5px;color:#dbe1fa}
+.callout>b:first-child{color:var(--ac3)}
+.fc em{display:block;font-style:normal;font-size:13.5px;color:var(--mut);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);line-height:1.55}
+.plate{display:flex;gap:22px;align-items:center;flex-wrap:wrap;padding:16px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--txt)}
+.plate svg{width:300px;max-width:100%;height:auto;flex:none}
+.leg{flex:1;min-width:220px;display:grid;gap:9px;font-size:14.5px;color:#d6dcf7}
+.leg i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:8px;vertical-align:-2px}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:90;width:100%;height:100%}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 0 10px}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;padding-top:34px}.term{transform:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .layout{grid-template-columns:1fr}
+  #side{position:sticky;top:64px;z-index:30;display:flex;gap:6px;overflow-x:auto;padding:8px;max-height:none;border-radius:16px}
+  #side h4,.mod{display:none}#side a{flex:none;white-space:nowrap}#side a span.t{display:none}
+  .rules{grid-template-columns:1fr}
+  .dots{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- print (Print button saves the reviewer as PDF) ---------- */
+@media print{
+  #fx,.aurora,.grid,header,.hero,.stats,#side,.cta,.eli .btn,#exh,#exam,footer,#prog,#confetti{display:none!important}
+  body{background:#fff;color:#111}
+  .layout{display:block;margin:0}
+  .card{background:#fff;border:1px solid #bbb;box-shadow:none;break-inside:avoid;opacity:1!important;transform:none!important;backdrop-filter:none}
+  .rv{opacity:1!important;transform:none!important}
+  b,.th h3{color:#111}.fc b{color:#0f766e}.fc span,.ti div,ul.pts li{color:#222}
+  ul.pts li,.fc,.ti{background:#fafafa;border:1px solid #e5e5e5}
+  code{color:#7c2d12;background:#fff7ed;border-color:#fdba74}
+  .e5{max-height:none!important;opacity:1!important;margin-top:8px;padding:10px 14px;background:#f3f0ff;border-color:#c4b5fd;color:#111}
+  .ti::before{background:#fff}.ti .yr{color:#04070f}
+  .callout{background:#f6f6f6;color:#111;border-left-color:#999}.callout>b:first-child{color:#111}
+  .fc em{color:#444}.plate{background:#fafafa;color:#111}.leg{color:#222}
+}
+html.access-pending body > :not(#accessGate),
+html.access-denied body > :not(#accessGate){display:none!important}
+#accessGate{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;margin:0;padding:24px;max-width:none;background:var(--bg);color:var(--txt);text-align:center}
+#accessGate p{max-width:36rem;margin:0;padding:24px 30px;border:1px solid var(--line);border-radius:18px;background:var(--glass);font-weight:800;letter-spacing:.04em}
+#accessGate[hidden]{display:none}
+</style>
+</head>
+<body>
+<div id="accessGate" role="alert" aria-live="assertive" aria-busy="true"><p id="accessMessage">Checking BSIT_STUDY access&hellip;</p></div>
+<canvas id="fx"></canvas>
+<div class="aurora"><i></i><i></i><i></i></div>
+<div class="grid"></div>
+<canvas id="confetti" class="hide"></canvas>
+<div id="prog"></div>
+
+<header id="topbar">
+  <div class="brand"><div class="logo">PE</div><div>Skills Training, Nutrition &amp; Healthy Eating<small>PATHFIT &middot; Groups 3, 4 &amp; 5</small></div></div>
+  <div class="tabs">
+    <button class="tab on" id="tabRev" onclick="show('rev')">&#128216; Reviewer</button>
+    <button class="tab" id="tabEx" onclick="show('exh')">&#128221; Exam</button>
+  </div>
+  <div class="dots" id="dots" title="Accent color">
+    <b style="background:#2dd4bf;color:#2dd4bf" data-t="teal"></b>
+    <b style="background:#38bdf8;color:#38bdf8" data-t="sky"></b>
+    <b style="background:#a78bfa;color:#a78bfa" data-t="violet"></b>
+    <b style="background:#fb7185;color:#fb7185" data-t="rose"></b>
+  </div>
+  <button class="ibtn" onclick="toggleAll()">&#129490; ELI5 all</button>
+  <a class="ibtn" href="PATHFIT_GROUP345.pdf" download="PATHFIT_GROUP345.pdf" style="text-decoration:none">&#11015; Download PDF Reviewer</a>
+</header>
+
+<main class="wrap">
+  <!-- REVIEWER -->
+  <section id="rev">
+    <div class="hero">
+      <div>
+        <span class="pill">Groups 3, 4 &amp; 5 &middot; 16 topics</span>
+        <h2>Train smart. <span class="grad">Eat right.</span><br>Move well.</h2>
+        <p>Skills training and SMART goal-setting, body movement patterns, the six essential nutrients, recommended daily intake, Pinggang Pinoy, healthy eating habits, and nutrition for fitness. This reviewer includes concise summaries, quick comparisons, and a timed 60-item exam.</p>
+        <div class="cta">
+          <button class="btn big" onclick="document.getElementById('t0').scrollIntoView()">Start reviewing &rarr;</button>
+          <button class="btn big ghost" onclick="show('exh')">Take the exam</button>
+        </div>
+      </div>
+      <div class="term">
+        <div class="bar3"><i></i><i></i><i></i><span>pathfit.log</span></div>
+        <pre id="typer"></pre>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="sTop">0/16</b><span>Topics studied</span></div>
+      <div class="stat"><b>60</b><span>Exam items</span></div>
+      <div class="stat"><b>45:00</b><span>Time limit</span></div>
+      <div class="stat"><b id="sBest">--</b><span>Best score</span></div>
+    </div>
+    <div class="layout">
+      <nav id="side"><h4>Topics</h4></nav>
+      <div id="topics"></div>
+    </div>
+  </section>
+
+  <!-- EXAM HOME -->
+  <section id="exh" class="hide">
+    <div class="xh">
+      <div class="card">
+        <h2>&#128221; Exam <span class="grad">Arena</span></h2>
+        <p class="note">Focus up. Once you start, there is no turning back.</p>
+        <div class="rules">
+          <div class="rule"><b>&#129518;</b><span>60 items covering Groups 3, 4 and 5</span></div>
+          <div class="rule"><b>&#9201;&#65039;</b><span>45 minutes</span></div>
+          <div class="rule"><b>&#128584;</b><span>The reviewer is hidden during the exam</span></div>
+          <div class="rule"><b>&#128683;</b><span>Switch tabs or minimize and the exam ends. No score or answers shown.</span></div>
+        </div>
+        <p class="note">You can retake it only after 30 minutes.</p>
+        <div id="cool" class="warnbox hide"></div>
+        <button class="btn big" id="startBtn" onclick="startExam()">Start Exam &#128640;</button>
+      </div>
+      <div id="resultBox"></div>
+    </div>
+  </section>
+</main>
+
+<!-- EXAM -->
+<section id="exam" class="hide">
+  <div class="card" style="margin-bottom:18px">
+    <div class="xtop">
+      <div class="ring" id="ring">
+        <svg viewBox="0 0 120 120"><defs><linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs><circle class="tr" cx="60" cy="60" r="52"/><circle class="pr" id="pr" cx="60" cy="60" r="52"/></svg>
+        <div class="timer" id="timer">45:00</div>
+      </div>
+      <div class="xinfo"><b id="qcount"></b><div class="pbar"><i id="abar"></i></div><div class="kb" style="margin-top:8px">Keys: <kbd>1</kbd>-<kbd>4</kbd> pick &middot; <kbd>&larr;</kbd> <kbd>&rarr;</kbd> move &middot; <kbd>F</kbd> flag</div></div>
+      <button class="btn" onclick="submitExam()">Submit &#10004;</button>
+    </div>
+    <div class="qnav" id="qnav"></div>
+  </div>
+  <div class="card qcard" id="qbox"></div>
+  <div class="xnav">
+    <button class="btn ghost" onclick="go(-1)">&#9664; Prev</button>
+    <span class="sp"></span>
+    <button class="btn ghost" onclick="go(1)">Next &#9654;</button>
+  </div>
+</section>
+
+<footer id="foot">Made for studying. Good luck! &#128156;</footer>
+
+<script>
+/* ===================== CONTENT (PATHFIT - Groups 3, 4 and 5: Skills Training, Nutrition, and Healthy Eating) ===================== */
+const T=[{"t": "Skills Training in Movement Competency", "m": 0, "sum": ["[[Skills training in movement competency]] focuses on acquiring, refining, and mastering fundamental motor skills so they can be performed efficiently, safely, and without wasting energy.", "[[Movement quality]] refers to **how well** a movement is performed (form, posture, and stability) rather than how fast it is done or how many repetitions are completed.", "Motor learning happens in three stages: the [[Cognitive]], [[Associative]], and [[Autonomous]] phases."], "secs": [{"h": "Movement quality vs. quantity", "s": "grid", "items": [["Quality", "How well the movement is done: form, posture, and stability"], ["Quantity", "How fast it is done or how many repetitions are completed"]]}, {"h": "The three stages of motor learning", "s": "tl", "items": [["1. Cognitive Phase", "The learner understands the goal and structure of the movement, often making frequent errors."], ["2. Associative Phase", "Refining the movement, reducing errors, and building consistency."], ["3. Autonomous Phase", "The movement becomes automatic, requiring less conscious attention."]]}], "eli5": "Learning a skill is like learning to ride a bike. First you think about every step and wobble a lot, then you get smoother with practice, and finally you ride without even thinking about it. Doing it right matters more than doing it fast."}, {"t": "Principles of Goal-Setting: The SMART Goal Framework", "m": 0, "sum": ["A good fitness goal follows the [[SMART]] framework: Specific, Measurable, Achievable (Attainable), Relevant (Realistic), and Time-bound (Timely).", "The report uses the [[forearm plank]] as its example goal.", "Full example: do a forearm plank, hold it for 60 seconds continuously, add 10 seconds weekly, to reduce lower back pain and build posture support, within 4 weeks."], "secs": [{"h": "SMART: meaning and example (forearm plank)", "s": "grid", "items": [["S – Specific", "Define a clear and detailed objective.", "**Example:** Forearm plank exercise"], ["M – Measurable", "Establish quantifiable metrics and data to track progress.", "**Example:** Hold for 60 seconds continuously"], ["A – Achievable (Attainable)", "Ensure the goal is realistic, doable, and matches your available skills and resources.", "**Example:** Increase current hold time by adding 10 seconds weekly"], ["R – Relevant (Realistic)", "Confirm that the goal matters.", "**Example:** Reduces lower back pain and builds full-body posture support"], ["T – Time-bound (Timely)", "Set a clear deadline.", "**Example:** Achieve within 4 weeks"]]}], "eli5": "A SMART goal is a goal with a clear target, a way to measure it, a step size you can actually manage, a good reason, and a deadline. 'Get stronger' is vague; 'hold a plank for 60 seconds in 4 weeks' is SMART."}, {"t": "Body Movement Patterns", "m": 0, "sum": ["Fundamental movements can be grouped into patterns. Learning each pattern with good form builds the base for almost every exercise and sport.", "[[Lower body patterns]]: squat, lunge, hinge.", "[[Upper body patterns]]: horizontal push, horizontal pull, vertical push, vertical pull.", "[[Object manipulation patterns]]: lifting and throwing."], "secs": [{"h": "Lower body patterns", "s": "grid", "items": [["Squat", "A compound movement where you lower your hips from a standing position by bending your knees and hips, keeping your torso upright, and then push back up."], ["Lunge", "A single-leg movement where one leg steps forward, backward, or sideways, bending at the knee while the trailing leg lowers toward the floor."], ["Hinge", "A movement where you bend forward by shifting your hips backward with a minimal bend in the knees, maintaining a flat, neutral spine."]]}, {"h": "Upper body patterns", "s": "grid", "items": [["Horizontal Push", "Moving a weight or resistance directly away from your chest horizontally."], ["Horizontal Pull", "Drawing a weight or resistance horizontally toward your chest or torso."], ["Vertical Push", "Pressing a weight or resistance straight upward over your head, in line with your spine."], ["Vertical Pull", "Pulling a resistance down toward your collarbone, or pulling your own body weight up vertically."]]}, {"h": "Object manipulation patterns", "s": "grid", "items": [["Lifting", "The mechanics of safely picking up an object from the floor using your legs and hips while protecting your lower back."], ["Throwing", "A powerful, rotational movement where you project an object away from your body using coordinated force from your legs, core, and arms."]]}], "eli5": "Almost every exercise is built from a few basic moves: sitting down and standing up (squat), stepping (lunge), bending at the hips (hinge), pushing, pulling, lifting, and throwing. Learn these well and every sport gets easier."}, {"t": "What Are Nutrients? Macronutrients", "m": 1, "sum": ["[[Nutrients]] are the essential substances in food that our bodies need to live, grow, and stay healthy.", "**Macronutrients (needed in large amounts):** carbohydrates, fats, and proteins. These provide the body with energy (calories) for daily work and growth.", "**Micronutrients (needed in small amounts):** vitamins and minerals, along with water. These do not give us energy, but they control body processes and keep us healthy.", "The 6 essential nutrients are carbohydrates, fats, proteins, vitamins, minerals, and water."], "secs": [{"h": "Macronutrients: function and types", "s": "grid", "items": [["1. Carbohydrates (Energy Provider)", "Main energy source for our brain and physical activity.", "**Simple carbs (sugars):** found in fruits and milk, but also added to sweets and sodas. **Complex carbs (starches and fiber):** found in oats, bread, and rice. Fiber helps digestion and keeps us full."], ["2. Fats (Stored Energy and Protection)", "Gives concentrated energy (9 calories per gram) and helps absorb vitamins A, D, E, and K.", "**Saturated fats:** found in meat and butter (should be limited). **Unsaturated fats:** healthy fats found in fish, nuts, and vegetable oils. **Trans fats:** processed fats in fried foods (should be avoided)."], ["3. Proteins (Body Building Blocks)", "Made of amino acids to build and repair muscles, tissues, and skin.", "**Essential amino acids (9 types):** the body cannot make these, so we must get them from food. **Non-essential amino acids (11 types):** made naturally by the body."]]}], "eli5": "Food carries tiny helpers called nutrients. The big three (carbs, fats, proteins) are like fuel and building bricks. Carbs are quick fuel, fats are saved-up fuel, and proteins are the bricks that build and fix your muscles."}, {"t": "Micronutrients and Water", "m": 1, "sum": ["Micronutrients are needed only in small amounts, but they [[control body processes]] and keep us healthy.", "[[Vitamins]] are body regulators, [[minerals]] give structural support, and [[water]] is the essential fluid.", "Water has zero calories but carries nutrients to cells, flushes out waste, and keeps us hydrated."], "secs": [{"h": "Micronutrients and water: function and examples", "s": "grid", "items": [["4. Vitamins (Body Regulators)", "Organic compounds needed in small amounts for immune health and growth.", "**Examples:** vitamin C for immunity, vitamin D for bone health, and vitamin A for eyesight."], ["5. Minerals (Structural Support)", "Inorganic elements from the earth that support blood, bones, and fluid balance.", "**Examples:** calcium for strong bones, iron to carry oxygen in the blood, and sodium for fluid balance."], ["6. Water (Essential Fluid)", "Zero calories, but carries nutrients to cells, flushes out waste, and keeps us hydrated.", "**Examples:** drinking water, plus fruits and vegetables with high water content."]]}], "eli5": "Vitamins and minerals are like the body's repair crew and managers. They do not give energy, but without them things stop working right. Water is the delivery truck that carries everything around and takes out the trash."}, {"t": "Recommended Daily Intake (The Target)", "m": 1, "sum": ["To maintain a balanced diet, there are standard daily recommended amounts for each nutrient.", "Carbohydrates take the largest share of daily calories ([[45%–65%]]).", "**Key idea:** macronutrients fuel the body, while micronutrients and water regulate it. A balanced diet needs all six."], "secs": [{"h": "Standard daily recommended amounts", "s": "grid", "items": [["Carbohydrates", "45% to 65% of daily calories (about 225–325 grams)"], ["Fats", "20% to 35% of daily calories (about 44–77 grams)"], ["Proteins", "10% to 35% of daily calories (about 50–70 grams)"], ["Water", "9 cups a day for women, and 13 cups a day for men"], ["Vitamins and minerals", "Eat a wide variety of colorful fruits, vegetables, and whole foods every day to hit your daily targets naturally."]]}, {"h": "Key idea:", "s": "note", "x": "macronutrients fuel the body, while micronutrients and water regulate it. A balanced diet needs all six."}], "eli5": "Think of your daily food like a pie chart. The biggest slice should be carbs, then fats and proteins, and you need plenty of water. Colorful fruits and veggies take care of the vitamins and minerals."}, {"t": "Introduction: Healthy Eating Practices and Proper Nutrition", "m": 2, "sum": ["[[Healthy eating practices]] refer to the habits of choosing, preparing, and eating a variety of nutritious foods in the right amounts to meet our body's needs. It means eating a balanced diet that provides the nutrients and energy necessary to keep our bodies healthy and functioning properly.", "[[Proper nutrition]] is important because food provides the energy our bodies need for daily activities. It supports growth and development, strengthens our immune system, helps repair body tissues, and maintains our overall health. As students, it helps us stay energized and focused during classes and activities.", "Healthy eating and [[physical fitness]] work together: exercise strengthens our muscles and improves endurance, while proper nutrition provides the energy and nutrients needed to perform physical activities and recover afterward."], "secs": [{"h": "Healthy eating + physical fitness (examples)", "s": "grid", "items": [["Carbohydrates", "Provide energy for activities like running and playing sports"], ["Protein", "Helps repair and maintain our muscles"], ["Water", "Helps prevent dehydration, especially when we sweat during exercise"]]}, {"h": "To summarize:", "s": "note", "x": "healthy eating is not just about satisfying our hunger; it is about giving our bodies the proper nutrients they need to stay healthy, active, and strong."}], "eli5": "Eating healthy is not just about getting full. It is about giving your body the right fuel and materials so you can think in class, play sports, and grow strong."}, {"t": "The Six Essential Nutrients (Food Sources)", "m": 2, "sum": ["Our bodies need six types of nutrients to work well. Some are needed in large amounts (carbohydrates, proteins, fats, and water) and others in smaller amounts (vitamins and minerals), but all six are important.", "[[No single food]] contains all of them, which is why we need to eat a variety of foods every day.", "Many common Filipino foods are good sources: camote, saging, monggo, tofu, malunggay, and small fish."], "secs": [{"h": "What each does and common food sources", "s": "grid", "items": [["1. Carbohydrates", "The body's main source of energy. They help us perform daily activities and exercise.", "**Sources:** rice, corn, bread, oatmeal, camote, potato, cassava, saging"], ["2. Proteins", "Help build and repair muscles, tissues, and other body parts. They are important for growth.", "**Sources:** fish, chicken, lean meat, eggs, tofu, monggo and other beans, milk"], ["3. Fats", "Provide stored energy, protect organs, keep the body warm, and help absorb vitamins.", "**Sources:** fish, nuts, avocado, eggs, vegetable oils (use in small amounts)"], ["4. Vitamins", "Help the body function properly, support the immune system, and maintain healthy skin, eyes, and bones.", "**Sources:** fruits, vegetables, malunggay, carrots, mango, papaya, citrus fruits"], ["5. Minerals", "Help build strong bones and teeth, support nerve function, and help carry oxygen throughout the body.", "**Sources:** milk, small fish, leafy greens, beans, liver, eggs, seafood"], ["6. Water", "Keeps the body hydrated, regulates body temperature, and helps transport nutrients and remove waste.", "**Sources:** drinking water, plus fruits and vegetables with high water content"]]}, {"h": "Remember:", "s": "note", "x": "carbohydrates, proteins, and fats are called macronutrients because the body needs them in larger amounts. Vitamins and minerals are micronutrients. They are needed in tiny amounts but are essential for health."}], "eli5": "No one food has everything. Rice gives energy, fish builds muscle, malunggay gives vitamins, and water keeps it all moving. Mix them up every day so you get all six."}, {"t": "Balanced Diet and Proper Food Choices", "m": 2, "sum": ["A [[balanced diet]] is an eating pattern that includes the right kinds and amounts of food from all the major food groups, so the body gets all the nutrients it needs without too much or too little of anything.", "Fruits and vegetables are rich in vitamins, minerals, fiber, and water, and they are low in calories. Fiber keeps digestion regular and helps us feel full, while vitamins and minerals protect the body against illness.", "Eating a [[variety of colors]] (green leafy vegetables, orange carrots and squash, red tomatoes, yellow fruits) helps us get different nutrients.", "**Whole grains** such as brown rice, corn, oatmeal, and whole wheat bread keep more fiber and minerals than highly refined grains, and they give longer-lasting energy.", "**Healthy proteins** include fish, chicken without the skin, eggs, tofu, and legumes such as monggo and beans. These give protein with less unhealthy fat than fatty or heavily processed meats."], "secs": [{"h": "The three keys of a balanced diet", "s": "grid", "items": [["Balance", "Eat foods from different food groups"], ["Variety", "Choose different foods within each group"], ["Moderation", "Avoid going overboard on any one food"]]}], "eli5": "A balanced plate is like a good team: you need players from every position, different players each game, and no one hogging the ball."}, {"t": "Applying the Pinggang Pinoy Food Guide", "m": 2, "sum": ["[[Pinggang Pinoy]] (\"Filipino Plate\") is a food guide developed by the Department of Science and Technology–Food and Nutrition Research Institute ([[DOST-FNRI]]) together with the Department of Health.", "It uses a plate to show the right proportion of the three food groups in each meal.", "For adults: **half** the plate is [[Glow]] foods (vegetables and fruits, with more vegetables than fruits), about **one-third** is [[Go]] foods (energy-giving foods like rice, corn, bread, and root crops), and about **one-sixth** is [[Grow]] foods (body-building foods like fish, meat, eggs, and beans). A glass of water goes beside the plate.", "This is the version for adults. Versions for children, teens, and other groups have slightly different proportions."], "secs": [{"h": "The Pinggang Pinoy plate for adults", "s": "plate"}, {"h": "How to apply it:", "s": "note", "x": "before you eat, look at your plate. Is half of it vegetables and fruits? Is there a source of protein? Is the rice portion reasonable? If yes, your meal is on track."}], "eli5": "Picture your plate cut into parts: half for veggies and fruits (Glow), a third for rice or bread (Go), a small slice for fish, meat, eggs, or beans (Grow), and a glass of water on the side."}, {"t": "Healthy Eating Habits", "m": 2, "sum": ["Good nutrition is built on daily habits. The report lists four important habits that help us eat healthily.", "Skipping meals often leads to extreme hunger and poor food choices later in the day.", "It takes time for the brain to realize that the stomach is full, so eating too fast can lead to overeating."], "secs": [{"h": "The four habits", "s": "grid", "items": [["1. Eating regular, balanced meals", "Eat meals regularly and include different nutritious foods such as vegetables, fruits, protein, and carbohydrates. Skipping meals often leads to extreme hunger and poor food choices later in the day."], ["2. Eating breakfast when appropriate", "Breakfast can provide energy and nutrients that help us start our day. For students, a good breakfast supports concentration and energy during morning classes."], ["3. Practicing portion awareness", "Eat the right amount of food based on your body's needs and activity level. A very active person needs more food than someone who sits most of the day, and larger servings are not always better."], ["4. Eating slowly and recognizing hunger and fullness", "Eat slowly, pay attention to your body's signals, and stop when you feel comfortably full. It takes time for the brain to realize that the stomach is full, so eating too fast can lead to overeating."]]}, {"h": "Quick check:", "s": "note", "x": "Regular meals, breakfast, right portions, slow eating. Practice these four habits every day and they will become automatic."}], "eli5": "Eat on time, start your day with breakfast, take the amount your body needs, and eat slowly so your tummy can tell your brain when it is full."}, {"t": "Foods and Drinks to Limit", "m": 2, "sum": ["Some foods and drinks are fine once in a while but harmful when eaten too often or in large amounts.", "The goal is to **limit** them, not necessarily to ban them completely.", "Simple [[smarter swaps]] make it easier to cut back."], "secs": [{"h": "Limit this", "s": "grid", "items": [["Foods high in added sugar", "Too much sugar can lead to tooth decay, weight gain, and a higher risk of diabetes.", "**Examples:** candies, cakes, ice cream, etc."], ["Excessive salt and sodium", "Too much sodium can raise blood pressure over time.", "**Examples:** instant noodles, chips, canned meat, etc."], ["Frequently eating highly processed foods", "They are often high in salt, unhealthy fats, and calories but low in fiber and vitamins.", "**Examples:** processed meat, burgers, fries, etc."], ["Sugary drinks and excessive caffeine", "Sugary drinks add many calories without nutrients, and too much caffeine can disturb sleep.", "**Examples:** soft drinks, milk tea, coffee, strong tea, etc."]]}, {"h": "Smarter swaps (instead of... try...)", "s": "grid", "items": [["Soft drinks and milk tea", "Water, buko juice with no added sugar, or a smaller, less sweet serving"], ["Chips and instant noodles as a snack", "Boiled saging or camote, fruit, or unsalted nuts"], ["Burgers and fries", "Grilled or boiled fish or chicken with rice and vegetables"], ["Cakes and candy every day", "Fresh fruit, and save sweets for special occasions"]]}], "eli5": "Sweets, salty snacks, fast food, and soft drinks are 'sometimes foods', not 'everyday foods'. You do not have to quit them forever, just swap them for better choices most of the time."}, {"t": "Healthy Eating for Physical Fitness", "m": 2, "sum": ["**How food provides energy:** food is the body's fuel. During exercise the body mostly uses [[carbohydrates]] for quick energy, with [[fats]] supplying energy for longer, lighter activity. Eating rice, bread, oatmeal, or fruit a few hours before sports gives the body the fuel it needs to run, play, and train without running out of energy.", "**Muscle growth and recovery:** when we exercise, our muscles undergo small amounts of wear and tear. [[Protein]] helps repair and rebuild them so they become stronger, and carbohydrates refill the energy stores used during activity. Good choices after exercise include eggs, fish, chicken, milk, tofu, or beans with some rice or bread. Vitamins and minerals from fruits and vegetables also support recovery. Getting enough rest and sleep is part of recovery too.", "**Eating a variety of foods:** no single food can supply everything an active body needs. Eating a variety of foods from all food groups ensures we get enough energy, protein, vitamins, and minerals to stay strong, prevent illness, and keep up with our activities. The Pinggang Pinoy plate is also a good guide for active people, who may simply need larger portions."], "secs": [{"h": "Hydration before, during, and after exercise", "s": "tl", "items": [["Before", "Drink water in the hours before exercise so you start well hydrated."], ["During", "Take small sips regularly, especially in hot weather or long activity, because we lose water through sweat."], ["After", "Drink water to replace what was lost. Dehydration can cause tiredness, headaches, dizziness, and cramps."]]}, {"h": "Fitness formula:", "s": "note", "x": "Carbohydrates for energy + protein for repair + water for hydration + a variety of fruits and vegetables for vitamins and minerals."}], "eli5": "Before you play, eat some rice or fruit for fuel. After you play, eat protein to fix your muscles. Drink water before, during, and after, because sweating makes you lose a lot of it."}, {"t": "More Healthy Eating Habits: Water, Legumes, and Fresh Foods", "m": 2, "sum": ["Beyond the basic habits in Part 4, these additional practices round out a healthy way of eating."], "secs": [{"h": "Three more habits", "s": "grid", "items": [["Drink enough water", "Water is essential for nearly every body function: it keeps us hydrated, regulates body temperature, and helps carry nutrients and remove waste. A common guideline is about eight glasses a day, and more when the weather is hot or we are physically active. Make water your main drink instead of soft drinks and other sugary beverages."], ["Eat more legumes", "Legumes such as monggo, beans, chickpeas, and peas are affordable sources of plant protein and fiber, and they also supply minerals such as iron. They are easy to find in Philippine markets and can be cooked as ginisang monggo, added to soups, or used in place of meat in some meals. They are one of the best budget-friendly choices for healthy eating."], ["Choose fresh and minimally processed foods", "Whenever possible, choose fresh vegetables, fruits, fish, and whole grains over heavily processed alternatives. When cooking, prefer boiling, steaming, grilling, or sauteing with a little oil over deep frying, and go easy on salt, soy sauce, and seasoning powders."]]}, {"h": "Tip:", "s": "note", "x": "Fill half your plate with vegetables, add a serving of legumes or fish, and keep a glass of water beside you. It is simple, affordable, and healthy."}], "eli5": "Drink water instead of soft drinks, eat monggo and beans often because they are cheap and full of protein, and pick fresh food cooked simply instead of fried or packaged food."}, {"t": "Practical Tips: Affordable Food, Meal Planning, Sustainable Habits", "m": 2, "sum": ["Healthy eating does not have to be expensive. Many of the most nutritious foods are also the cheapest.", "[[Sustainable eating habits]]: healthy eating is a lifelong practice, not a short-term diet. Start with small changes, such as adding one vegetable to lunch or replacing one sugary drink with water each day, and build from there.", "Do not aim for perfection: enjoying a favorite treat once in a while is fine as long as your everyday habits are healthy. **Consistency matters more than strictness.**"], "secs": [{"h": "Affordable healthy food choices for students", "s": "grid", "items": [["Vegetables", "Malunggay, kangkong, pechay, kalabasa, sitaw, and other local, in-season vegetables."], ["Protein", "Eggs, monggo and other legumes, tofu (tokwa), and affordable local fish."], ["Energy foods", "Rice (brown or mixed when possible), camote, saging, and corn."], ["Fruits", "Bananas, papaya, and other seasonal fruits from the local market."], ["Drinks", "Plain water from home in a reusable bottle costs far less than soft drinks or milk tea."]]}, {"h": "Simple meal-planning tips", "s": "list", "items": ["Plan a few meals ahead for the week and make a short shopping list so you buy only what you need.", "Cook in batches and reuse ingredients. For example, extra vegetables can go into tomorrow's soup.", "Use Pinggang Pinoy as your checklist: half vegetables and fruits, a bit of protein, a portion of rice.", "Prepare snacks and a water bottle ahead of time so you are not tempted to buy junk food.", "Shop at the local market for fresh, seasonal produce, which is usually cheaper."]}], "eli5": "Healthy food can be cheap: kangkong, monggo, eggs, saging, and tap water from home. Plan your meals, bring your own snacks, and change one small thing at a time."}, {"t": "Summary, Closing Message, and Call to Action", "m": 2, "sum": ["**Summary:** healthy eating means choosing a variety of nutritious foods in the right amounts. We learned about the six essential nutrients (carbohydrates, proteins, fats, vitamins, minerals, and water) and how each supports the body.", "A balanced diet, guided by [[Pinggang Pinoy]], includes plenty of fruits and vegetables, whole grains, and healthy proteins.", "Good habits such as eating regular meals, having breakfast, watching portions, and eating slowly help us eat well, while limiting sugar, salt, processed foods, and sugary or highly caffeinated drinks protects our health.", "Proper nutrition and hydration fuel physical activity and help the body recover.", "**Closing message:** our food choices today shape our health, energy, and success tomorrow. As students, we have the power to start building healthy habits now, and those habits can last a lifetime."], "secs": [{"h": "Call to action:", "s": "note", "x": "Starting today, fill half your plate with vegetables and fruits, drink more water, and choose healthier snacks. Share what you learned with your family and friends so that together we can build a healthier community. Small changes, practiced every day, make a big difference."}, {"h": "Reference", "s": "grid", "items": [["DOST-FNRI", "Food and Nutrition Research Institute, Department of Science and Technology (DOST-FNRI). Pinggang Pinoy food guide. fnri.dost.gov.ph"]]}], "eli5": "What you eat today builds the you of tomorrow. Half a plate of veggies and fruits, more water, better snacks, and tell your family too."}];
+const Q=[{"q": "Skills training in movement competency focuses on:", "c": "Acquiring, refining, and mastering fundamental motor skills", "w": ["Lifting the heaviest weight possible", "Completing as many repetitions as possible", "Memorizing the rules of different sports"], "t": 1}, {"q": "Movement quality refers to:", "c": "How well a movement is performed: form, posture, and stability", "w": ["How fast a movement is done", "How many repetitions are completed", "How long a workout lasts"], "t": 1}, {"q": "In which stage of motor learning does the learner understand the goal and structure of the movement but often makes frequent errors?", "c": "Cognitive phase", "w": ["Associative phase", "Autonomous phase", "Recovery phase"], "t": 1}, {"q": "Refining the movement, reducing errors, and building consistency happen during the:", "c": "Associative phase", "w": ["Cognitive phase", "Autonomous phase", "Warm-up phase"], "t": 1}, {"q": "A movement that has become automatic and requires less conscious attention is in the:", "c": "Autonomous phase", "w": ["Cognitive phase", "Associative phase", "Beginner phase"], "t": 1}, {"q": "Which is the correct order of the three stages of motor learning?", "c": "Cognitive, Associative, Autonomous", "w": ["Associative, Cognitive, Autonomous", "Autonomous, Associative, Cognitive", "Cognitive, Autonomous, Associative"], "t": 1}, {"q": "In the SMART goal framework, 'S' means:", "c": "Specific: define a clear and detailed objective", "w": ["Strong: lift heavier every week", "Simple: choose the easiest exercise", "Speed: finish the movement quickly"], "t": 2}, {"q": "'Hold the forearm plank for 60 seconds continuously' makes the goal:", "c": "Measurable", "w": ["Relevant", "Time-bound", "Specific only"], "t": 2}, {"q": "'Increase current hold time by adding 10 seconds weekly' shows that the goal is:", "c": "Achievable (Attainable)", "w": ["Measurable", "Time-bound (Timely)", "Relevant (Realistic)"], "t": 2}, {"q": "'The plank reduces lower back pain and builds full-body posture support' explains why the goal is:", "c": "Relevant (Realistic)", "w": ["Specific", "Measurable", "Time-bound (Timely)"], "t": 2}, {"q": "'Achieve within 4 weeks' satisfies which SMART letter?", "c": "T: Time-bound (Timely)", "w": ["A: Achievable", "M: Measurable", "S: Specific"], "t": 2}, {"q": "An achievable goal is one that:", "c": "Is realistic, doable, and matches your available skills and resources", "w": ["Has no deadline so there is no pressure", "Is as hard as possible to push your limits", "Is copied from a professional athlete's plan"], "t": 2}, {"q": "Lowering your hips from standing by bending the knees and hips, keeping the torso upright, then pushing back up is a:", "c": "Squat", "w": ["Lunge", "Hinge", "Vertical push"], "t": 3}, {"q": "A single-leg movement where one leg steps forward, backward, or sideways while the trailing leg lowers toward the floor is a:", "c": "Lunge", "w": ["Squat", "Hinge", "Horizontal pull"], "t": 3}, {"q": "Bending forward by shifting your hips backward with a minimal knee bend and a flat, neutral spine is a:", "c": "Hinge", "w": ["Squat", "Lunge", "Vertical pull"], "t": 3}, {"q": "Pressing a weight straight upward over your head, in line with your spine, is a:", "c": "Vertical push", "w": ["Horizontal push", "Vertical pull", "Throwing pattern"], "t": 3}, {"q": "Drawing a weight or resistance horizontally toward your chest or torso is a:", "c": "Horizontal pull", "w": ["Horizontal push", "Vertical pull", "Hinge"], "t": 3}, {"q": "Pulling your own body weight up vertically (like a pull-up) is a:", "c": "Vertical pull", "w": ["Vertical push", "Horizontal pull", "Lunge"], "t": 3}, {"q": "Safe lifting of an object from the floor mainly uses:", "c": "The legs and hips while protecting the lower back", "w": ["The lower back and arms only", "The neck and shoulders", "Speed instead of form"], "t": 3}, {"q": "Throwing is described as a powerful, rotational movement using coordinated force from the:", "c": "Legs, core, and arms", "w": ["Arms only", "Wrists and fingers only", "Neck and shoulders"], "t": 3}, {"q": "Squat, lunge, and hinge belong to which group of movement patterns?", "c": "Lower body patterns", "w": ["Upper body patterns", "Object manipulation patterns", "Autonomous patterns"], "t": 3}, {"q": "Nutrients are best defined as:", "c": "Essential substances in food that our bodies need to live, grow, and stay healthy", "w": ["Only the vitamins found in fruits", "Any food that tastes good", "Supplements bought from the pharmacy"], "t": 4}, {"q": "Which group lists the three macronutrients?", "c": "Carbohydrates, fats, and proteins", "w": ["Vitamins, minerals, and water", "Fiber, sugar, and salt", "Calcium, iron, and sodium"], "t": 4}, {"q": "Which statement about micronutrients is correct?", "c": "They do not give energy, but they control body processes and keep us healthy", "w": ["They are the body's main source of calories", "They are needed in very large amounts", "They are only found in meat"], "t": 4}, {"q": "Which nutrient gives concentrated energy (9 calories per gram) and helps absorb vitamins A, D, E, and K?", "c": "Fats", "w": ["Carbohydrates", "Proteins", "Water"], "t": 4}, {"q": "Proteins are made of ___ that build and repair muscles, tissues, and skin.", "c": "Amino acids", "w": ["Simple sugars", "Fatty acids", "Minerals"], "t": 4}, {"q": "How many essential amino acids must we get from food because the body cannot make them?", "c": "9", "w": ["11", "20", "6"], "t": 4}, {"q": "Complex carbohydrates (starches and fiber) are found in:", "c": "Oats, bread, and rice", "w": ["Sweets and sodas", "Butter and meat", "Fried foods"], "t": 4}, {"q": "Which type of fat should be avoided?", "c": "Trans fats (processed fats in fried foods)", "w": ["Unsaturated fats", "Fats in fish", "Fats in nuts"], "t": 4}, {"q": "Healthy unsaturated fats are found in:", "c": "Fish, nuts, and vegetable oils", "w": ["Meat and butter", "Fried foods", "Candies and cakes"], "t": 4}, {"q": "Vitamins are called 'body regulators' because they are:", "c": "Organic compounds needed in small amounts for immune health and growth", "w": ["The body's main source of energy", "Inorganic elements from the earth", "Zero-calorie fluids"], "t": 5}, {"q": "Which mineral helps carry oxygen in the blood?", "c": "Iron", "w": ["Calcium", "Sodium", "Vitamin C"], "t": 5}, {"q": "Which nutrient has zero calories but carries nutrients to cells, flushes out waste, and keeps us hydrated?", "c": "Water", "w": ["Minerals", "Vitamins", "Fiber"], "t": 5}, {"q": "According to the report, vitamin A is linked to:", "c": "Eyesight", "w": ["Bone health", "Immunity only", "Fluid balance"], "t": 5}, {"q": "The recommended daily intake of carbohydrates is:", "c": "45% to 65% of daily calories (about 225–325 g)", "w": ["20% to 35% of daily calories", "10% to 35% of daily calories", "5% to 10% of daily calories"], "t": 6}, {"q": "The recommended daily intake of fats is:", "c": "20% to 35% of daily calories (about 44–77 g)", "w": ["45% to 65% of daily calories", "10% to 35% of daily calories", "70% to 80% of daily calories"], "t": 6}, {"q": "The recommended daily intake of proteins is:", "c": "10% to 35% of daily calories (about 50–70 g)", "w": ["45% to 65% of daily calories", "20% to 35% of daily calories", "50% to 70% of daily calories"], "t": 6}, {"q": "The report's daily water target is:", "c": "9 cups for women and 13 cups for men", "w": ["4 cups for everyone", "13 cups for women and 9 cups for men", "2 liters only on exercise days"], "t": 6}, {"q": "Healthy eating practices refer to:", "c": "The habits of choosing, preparing, and eating a variety of nutritious foods in the right amounts", "w": ["Eating only one kind of healthy food every day", "Skipping meals to lose weight", "Eating as much as you want as long as it is fresh"], "t": 7}, {"q": "How do healthy eating and physical fitness work together?", "c": "Exercise strengthens muscles, while nutrition provides energy and nutrients to perform and recover", "w": ["Exercise replaces the need for good food", "Nutrition matters only for athletes", "They are unrelated to each other"], "t": 7}, {"q": "Which foods are listed as common sources of carbohydrates?", "c": "Rice, corn, camote, cassava, saging", "w": ["Malunggay, carrots, papaya", "Small fish, liver, seafood", "Avocado and vegetable oil"], "t": 8}, {"q": "Malunggay, carrots, mango, papaya, and citrus fruits are listed as sources of:", "c": "Vitamins", "w": ["Proteins", "Fats", "Carbohydrates"], "t": 8}, {"q": "Why do we need to eat a variety of foods every day?", "c": "No single food contains all six nutrients", "w": ["Variety makes food more expensive", "The body can only digest one food at a time", "Vitamins are found only in meat"], "t": 8}, {"q": "The three keys of a balanced diet are:", "c": "Balance, variety, and moderation", "w": ["Speed, strength, and stamina", "Protein, protein, and protein", "Breakfast, lunch, and dinner"], "t": 9}, {"q": "Whole grains such as brown rice and oatmeal are better than highly refined grains because they:", "c": "Keep more fiber and minerals and give longer-lasting energy", "w": ["Contain more added sugar", "Are always cheaper", "Have no calories"], "t": 9}, {"q": "Pinggang Pinoy was developed by:", "c": "DOST-FNRI together with the Department of Health", "w": ["The Department of Education alone", "A fast-food company", "The World Health Organization alone"], "t": 10}, {"q": "In Pinggang Pinoy for adults, half of the plate is for:", "c": "Glow foods (vegetables and fruits)", "w": ["Go foods (rice, corn, bread)", "Grow foods (fish, meat, eggs)", "Desserts"], "t": 10}, {"q": "Fish, meat, eggs, and beans are ___ foods, filling about ___ of the adult plate.", "c": "Grow; one-sixth", "w": ["Go; one-third", "Glow; one-half", "Grow; one-half"], "t": 10}, {"q": "Why is eating slowly recommended?", "c": "It takes time for the brain to realize the stomach is full", "w": ["Food tastes worse when eaten fast", "It makes meals more expensive", "It prevents you from drinking water"], "t": 11}, {"q": "According to the report, skipping meals often leads to:", "c": "Extreme hunger and poor food choices later in the day", "w": ["Better concentration in class", "Faster muscle growth", "Lower blood pressure"], "t": 11}, {"q": "Portion awareness means:", "c": "Eating the right amount based on your body's needs and activity level", "w": ["Always choosing the largest serving", "Eating the same amount as your friends", "Never eating rice"], "t": 11}, {"q": "Too much salt and sodium can:", "c": "Raise blood pressure over time", "w": ["Improve eyesight", "Build stronger muscles", "Replace water in the body"], "t": 12}, {"q": "A smarter swap for soft drinks and milk tea is:", "c": "Water or buko juice with no added sugar", "w": ["A bigger cup of milk tea", "Energy drinks", "Strong coffee"], "t": 12}, {"q": "During exercise, the body mostly uses ___ for quick energy.", "c": "Carbohydrates", "w": ["Proteins", "Vitamins", "Minerals"], "t": 13}, {"q": "Which is the report's 'fitness formula'?", "c": "Carbs for energy + protein for repair + water for hydration + fruits and vegetables for vitamins and minerals", "w": ["Protein only + no carbohydrates", "Energy drinks + skipping meals", "Sweets before exercise + no water during"], "t": 13}, {"q": "Legumes such as monggo, beans, chickpeas, and peas are:", "c": "Affordable sources of plant protein and fiber that also supply iron", "w": ["Highly processed foods to limit", "Mainly sources of trans fat", "Only useful as desserts"], "t": 14}, {"q": "Which cooking methods does the report prefer over deep frying?", "c": "Boiling, steaming, grilling, or sauteing with a little oil", "w": ["Deep frying twice", "Adding more seasoning powder", "Using more soy sauce and salt"], "t": 14}, {"q": "Which is a simple meal-planning tip from the report?", "c": "Plan a few meals ahead and make a short shopping list", "w": ["Buy snacks at the canteen whenever you feel hungry", "Skip breakfast to save money", "Cook a completely new dish for every meal"], "t": 15}, {"q": "According to the report, sustainable eating habits are built by:", "c": "Starting with small changes and staying consistent", "w": ["Following a very strict diet for one week", "Never eating any treat ever again", "Changing everything all at once"], "t": 15}, {"q": "The report's call to action asks students to:", "c": "Fill half the plate with vegetables and fruits, drink more water, and choose healthier snacks", "w": ["Stop eating rice completely", "Exercise without eating", "Drink milk tea instead of water"], "t": 16}];
+const MOD=["Group 3: Skills Training & Goal-Setting", "Group 4: What Are Nutrients?", "Group 5: Healthy Eating Practices"];
+const MODSTART={0:0,3:1,6:2};/* ===================== HELPERS ===================== */
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const fmt=s=>esc(s).replace(/\[\[(.+?)\]\]/g,'<code>$1</code>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const DUR=2700, COOL=30*60*1000;
+const ls={get:(k,d)=>{try{const v=localStorage.getItem(k);return v===null?d:v}catch(e){return d}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},del:k=>{try{localStorage.removeItem(k)}catch(e){}}};
+
+/* ===================== THEME ===================== */
+function setTheme(t){document.documentElement.dataset.theme=t;ls.set('wfTheme',t);document.querySelectorAll('#dots b').forEach(b=>b.classList.toggle('on',b.dataset.t===t));if(window.recolor)recolor()}
+document.querySelectorAll('#dots b').forEach(b=>b.onclick=()=>setTheme(b.dataset.t));
+
+/* ===================== BUILD REVIEWER ===================== */
+let done=[];try{done=JSON.parse(ls.get('pf345Done','[]'))||[]}catch(e){done=[]}
+function updStats(){
+  $('sTop').textContent=done.length+'/'+T.length;
+  const b=ls.get('pf345Best',null);$('sBest').textContent=b===null?'--':b+'/'+Q.length;
+  document.querySelectorAll('#side a').forEach((a,i)=>a.classList.toggle('done',done.includes(i)));
+  document.querySelectorAll('.mark').forEach((m,i)=>{const d=done.includes(i);m.classList.toggle('done',d);m.textContent=d?'✓ Studied':'Mark as studied'});
+}
+const PLATE='<div class="plate"><svg viewBox="0 0 300 200" role="img" aria-label="Pinggang Pinoy plate: Glow one-half, Go one-third, Grow one-sixth, plus a glass of water"><circle cx="100" cy="100" r="96" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="3"/><path d="M100,100 L10,100 A90,90 0 0 1 190,100 Z" fill="#22c55e"/><path d="M100,100 L190,100 A90,90 0 0 1 145,177.94 Z" fill="#ea580c"/><path d="M100,100 L145,177.94 A90,90 0 0 1 10,100 Z" fill="#f59e0b"/><g font-family="inherit" font-weight="800" text-anchor="middle" fill="#fff"><text x="100" y="58" font-size="17">GLOW</text><text x="100" y="76" font-size="12">1/2</text><text x="72" y="140" font-size="16" fill="#3b2300">GO</text><text x="72" y="156" font-size="12" fill="#3b2300">1/3</text><text x="148" y="132" font-size="11">GROW</text><text x="148" y="146" font-size="11">1/6</text></g><rect x="230" y="70" width="40" height="80" rx="4" fill="none" stroke="#60a5fa" stroke-width="3"/><rect x="233" y="88" width="34" height="59" rx="2" fill="#93c5fd"/><text x="250" y="172" font-size="13" font-weight="700" text-anchor="middle" fill="currentColor">Water</text></svg><div class="leg"><div><i style="background:#22c55e"></i><b>Glow (1/2):</b> vegetables and fruits, with more vegetables than fruits</div><div><i style="background:#f59e0b"></i><b>Go (1/3):</b> energy-giving foods like rice, corn, bread, and root crops</div><div><i style="background:#ea580c"></i><b>Grow (1/6):</b> body-building foods like fish, meat, eggs, and beans</div><div><i style="background:#93c5fd"></i><b>Water:</b> a glass of water goes beside the plate</div><div class="note">Pinggang Pinoy for adults. Versions for children, teens, and other groups have slightly different proportions.</div></div></div>';
+function section(s){
+  if(s.s==='note')return '<div class="callout"><b>'+esc(s.h)+'</b> '+fmt(s.x)+'</div>';
+  let h='<div class="sh">'+esc(s.h)+'</div>';
+  if(s.s==='plate')h+=PLATE;
+  else if(s.s==='list')h+='<ul class="pts">'+s.items.map(i=>'<li>'+fmt(i)+'</li>').join('')+'</ul>';
+  else if(s.s==='tl')h+='<div class="tl">'+s.items.map(i=>'<div class="ti"><span class="yr">'+esc(i[0])+'</span><div>'+fmt(i[1])+'</div></div>').join('')+'</div>';
+  else h+='<div class="fg">'+s.items.map(i=>'<div class="fc"><b>'+esc(i[0])+'</b><span>'+fmt(i[1])+'</span>'+(i[2]?'<em>'+fmt(i[2])+'</em>':'')+'</div>').join('')+'</div>';
+  return h;
+}
+T.forEach((x,i)=>{
+  if(i in MODSTART){const m=document.createElement('div');m.className='mod';m.textContent=MOD[MODSTART[i]];$('side').appendChild(m)}
+  const a=document.createElement('a');a.href='#t'+i;a.id='s'+i;
+  a.innerHTML='<em><span>'+(i+1)+'</span></em><span class="t">'+esc(x.t.split(/[:(]/)[0].trim())+'</span>';
+  $('side').appendChild(a);
+  const d=document.createElement('div');d.className='card rv';d.id='t'+i;
+  d.innerHTML='<div class="th"><div class="num">'+(i+1)+'</div><div><small>'+esc(MOD[x.m])+'</small><h3>'+esc(x.t)+'</h3></div></div>'
+   +'<ul class="pts">'+x.sum.map(s=>'<li>'+fmt(s)+'</li>').join('')+'</ul>'
+   +x.secs.map(section).join('')
+   +'<div class="eli"><button class="btn sm" onclick="this.parentNode.querySelector(\'.e5\').classList.toggle(\'on\')">&#129490; Explain like I\'m 5</button>'
+   +'<button class="btn sm ghost mark" onclick="toggleDone('+i+')">Mark as studied</button>'
+   +'<div class="e5">&#129490; '+esc(x.eli5)+'</div></div>';
+  $('topics').appendChild(d);
+});
+function toggleDone(i){const k=done.indexOf(i);if(k>=0)done.splice(k,1);else done.push(i);ls.set('pf345Done',JSON.stringify(done));updStats()}
+let allOn=false;
+function toggleAll(){allOn=!allOn;document.querySelectorAll('.e5').forEach(e=>e.classList.toggle('on',allOn));if(!examActive)show('rev')}
+/* reveal + scroll spy + spotlight */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.05});
+document.querySelectorAll('.rv').forEach(c=>io.observe(c));
+const spy=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){document.querySelectorAll('#side a').forEach(a=>a.classList.remove('on'));const a=$('s'+e.target.id.slice(1));if(a){a.classList.add('on');if(innerWidth<=980)a.scrollIntoView({inline:'center',block:'nearest'})}}
+}),{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('#topics .card').forEach(c=>spy.observe(c));
+/* hero typewriter */
+const TYPE=`> open "PATHFIT Groups 3-5 Review"
+Learn: Cognitive -> Associative -> Autonomous
+Goal: S.M.A.R.T  |  plank 60s in 4 weeks
+Plate: 1/2 Glow + 1/3 Go + 1/6 Grow + water
+Fuel = carbs | Repair = protein | Hydrate
+
+> status: ready to train and eat right`;
+const col=s=>esc(s).replace(/"([^"]*)"/g,'<span class="st">"$1"</span>').replace(/\b(\d{4})\b/g,'<span class="nu">$1</span>').replace(/^&gt;/gm,'<span class="tg">&gt;</span>');
+(function(){let i=0;const el=$('typer');
+  function step(){
+    if(i<=TYPE.length){el.innerHTML=col(TYPE.slice(0,i))+'<span class="cur"></span>';i++;setTimeout(step,i%10===0?140:30)}
+    else setTimeout(()=>{i=0;step()},3800);
+  }step();
+})();
+
+/* ===================== BACKGROUND SYMBOLS ===================== */
+(function(){
+  const cv=$('fx'),ctx=cv.getContext('2d');let W,H,P=[];
+  const SYM=['SMART','Squat','Lunge','Hinge','Push','Pull','Carbs','Protein','Fats','Vitamins','Minerals','Water','Glow','Go','Grow','Plank','Fiber','Monggo'];
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+  size();addEventListener('resize',size);
+  for(let i=0;i<46;i++)P.push({x:Math.random()*1600,y:Math.random()*1000,s:SYM[i%SYM.length],v:.12+Math.random()*.4,z:10+Math.random()*20,o:.04+Math.random()*.1,r:Math.random()*6.28,w:(Math.random()-.5)*.003});
+  let colr='#2dd4bf';
+  window.recolor=()=>{colr=getComputedStyle(document.documentElement).getPropertyValue('--ac').trim()||'#2dd4bf'};recolor();
+  (function loop(){
+    ctx.clearRect(0,0,W,H);ctx.fillStyle=colr;
+    P.forEach(p=>{p.y-=p.v;p.r+=p.w;if(p.y<-40){p.y=H+40;p.x=Math.random()*W}
+      ctx.save();ctx.globalAlpha=p.o;ctx.font='700 '+p.z+'px Consolas,monospace';ctx.translate(p.x%W,p.y);ctx.rotate(Math.sin(p.r)*.3);ctx.fillText(p.s,0,0);ctx.restore()});
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ===================== VIEWS ===================== */
+function show(v){
+  if(examActive)return;
+  ['rev','exh','exam'].forEach(k=>$(k).classList.toggle('hide',k!==v));
+  $('tabRev').classList.toggle('on',v==='rev');$('tabEx').classList.toggle('on',v==='exh');
+  if(v==='exh')updateCool();
+  window.scrollTo(0,0);
+}
+
+/* ===================== COOLDOWN ===================== */
+let coolT=null,leftNote=false;
+function leftMs(){const l=+ls.get('pf345ExamLast',0)||0;return Math.max(0,l+COOL-Date.now())}
+function updateCool(){
+  clearInterval(coolT);
+  const run=()=>{
+    const m=leftMs();const b=$('cool'),s=$('startBtn');
+    if(m>0){const mm=Math.floor(m/60000),ss=Math.floor(m/1000)%60;
+      b.classList.remove('hide');
+      b.textContent=(leftNote?'🚪 You left the exam, so it was ended. ':'')+'⏳ You can retake the exam in '+mm+':'+String(ss).padStart(2,'0');
+      s.disabled=true;}
+    else{b.classList.add('hide');s.disabled=false;clearInterval(coolT);}
+  };run();coolT=setInterval(run,1000);
+}
+
+/* ===================== EXAM ===================== */
+let examActive=false,qs=[],ans={},flags={},cur=0,endAt=0,tick=null;
+
+function startExam(){
+  if(leftMs()>0)return;
+  leftNote=false;
+  qs=shuf(Q.map((q,i)=>({i,q:q.q,c:q.c,o:shuf([q.c].concat(q.w))})));
+  ans={};flags={};cur=0;endAt=Date.now()+DUR*1000;examActive=true;
+  $('topbar').classList.add('hide');$('foot').classList.add('hide');
+  ['rev','exh'].forEach(k=>$(k).classList.add('hide'));$('exam').classList.remove('hide');
+  $('resultBox').innerHTML='';
+  ls.set('pf345ExamState','1');ls.set('pf345ExamAns',JSON.stringify({}));
+  renderQ();window.scrollTo(0,0);
+  tick=setInterval(()=>{
+    const s=Math.max(0,Math.round((endAt-Date.now())/1000));
+    $('timer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+    $('ring').classList.toggle('low',s<=300);
+    $('pr').style.strokeDashoffset=326.7*(1-s/DUR);
+    if(s<=0)finish('time');
+  },500);
+}
+function renderQ(){
+  const q=qs[cur],n=Object.keys(ans).length;
+  $('qcount').textContent='Question '+(cur+1)+' of '+qs.length+' · '+n+' answered';
+  $('abar').style.width=(n/qs.length*100)+'%';
+  $('qbox').style.animation='none';void $('qbox').offsetWidth;$('qbox').style.animation='';
+  $('qbox').innerHTML='<div class="qhead"><span class="qtag">Item '+(cur+1)+'</span><button class="btn sm ghost flag '+(flags[q.i]?'on':'')+'" onclick="flag()">⚑ '+(flags[q.i]?'Flagged':'Flag')+'</button></div>'
+   +'<p class="qtext">'+esc(q.q)+'</p>'
+   +'<div class="opts">'+q.o.map((o,k)=>'<button class="opt '+(ans[q.i]===o?'sel':'')+'" onclick="pick('+k+')">'+esc(o)+'</button>').join('')+'</div>';
+  $('qnav').innerHTML=qs.map((x,k)=>'<button class="'+(ans[x.i]!==undefined?'done ':'')+(flags[x.i]?'fl ':'')+(k===cur?'cur':'')+'" onclick="cur='+k+';renderQ()">'+(k+1)+'</button>').join('');
+}
+function pick(k){const q=qs[cur];ans[q.i]=q.o[k];ls.set('pf345ExamAns',JSON.stringify(ans));renderQ()}
+function flag(){const q=qs[cur];flags[q.i]=!flags[q.i];renderQ()}
+function go(d){cur=Math.min(qs.length-1,Math.max(0,cur+d));renderQ()}
+document.addEventListener('keydown',e=>{
+  if(!examActive||document.querySelector('.modal'))return;
+  const k=e.key.toLowerCase();
+  if(['1','2','3','4'].includes(k))pick(+k-1);
+  else if(['a','b','c','d'].includes(k))pick('abcd'.indexOf(k));
+  else if(k==='arrowright')go(1);else if(k==='arrowleft')go(-1);else if(k==='f')flag();
+});
+
+function submitExam(){
+  const un=qs.length-Object.keys(ans).length,fl=Object.values(flags).filter(Boolean).length;
+  const m=document.createElement('div');m.className='modal';
+  m.innerHTML='<div class="mbox"><h3>Submit your exam?</h3><p>'+(un?'⚠️ You still have <b>'+un+'</b> unanswered item'+(un>1?'s':'')+'. ':'All items answered. ')+(fl?fl+' flagged. ':'')+'You cannot undo this.</p><div class="row"><button class="btn ghost" id="mNo">Keep going</button><button class="btn" id="mYes">Submit now</button></div></div>';
+  document.body.appendChild(m);
+  $('mNo').onclick=()=>m.remove();
+  $('mYes').onclick=()=>{m.remove();finish('submit')};
+}
+
+function score(a){let s=0;Q.forEach((q,i)=>{if(a[i]===q.c)s++});return s}
+
+function finish(reason,savedAns){
+  if(!examActive&&!savedAns)return;
+  const a=savedAns||ans;
+  examActive=false;clearInterval(tick);
+  document.querySelectorAll('.modal').forEach(x=>x.remove());
+  ls.set('pf345ExamLast',Date.now());
+  ls.del('pf345ExamState');ls.del('pf345ExamAns');
+  $('exam').classList.add('hide');$('topbar').classList.remove('hide');$('foot').classList.remove('hide');
+  $('exh').classList.remove('hide');$('rev').classList.add('hide');
+  $('tabRev').classList.remove('on');$('tabEx').classList.add('on');
+
+  /* Left the exam (tab switch / reload): no result, no answers */
+  if(reason==='tab'||reason==='reload'){
+    leftNote=true;$('resultBox').innerHTML='';
+    updateCool();window.scrollTo(0,0);return;
+  }
+
+  const s=score(a),n=Object.keys(a).length,pct=Math.round(s/Q.length*100);
+  const best=+ls.get('pf345Best',-1);if(s>best){ls.set('pf345Best',s)}updStats();
+  const msg={time:'⏰ Time is up!',submit:'✅ Exam submitted'}[reason];
+  const title=pct>=90?'Outstanding! 🏆':pct>=75?'Great job! 🎉':pct>=50?'Getting there 💪':'Keep reviewing 📚';
+  $('resultBox').innerHTML='<div class="card" style="margin-top:24px">'
+   +'<div class="warnbox" style="margin-top:0">'+msg+'</div>'
+   +'<div class="res"><div class="sring"><svg viewBox="0 0 170 170"><defs><linearGradient id="gr2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset=".5" stop-color="#60a5fa"/><stop offset="1" stop-color="#f59e0b"/></linearGradient></defs><circle class="tr" cx="85" cy="85" r="75"/><circle class="pr" id="spr" cx="85" cy="85" r="75"/></svg><div class="mid"><div><b class="grad">'+s+'/'+Q.length+'</b><span>'+pct+'%</span></div></div></div>'
+   +'<div class="rtxt"><h3>'+title+'</h3><p class="note">Answered '+n+' of '+Q.length+' · Unanswered items count as wrong.<br>You can retake the exam after 30 minutes. Head back to the Reviewer anytime.</p>'
+   +'<button class="btn sm" onclick="show(\'rev\')">Back to Reviewer</button></div></div>'
+   +'<h3 style="margin:22px 0 0">Answer Key</h3><div class="chips" id="chips"><span class="chip on" data-f="all">All '+Q.length+'</span><span class="chip" data-f="x">Wrong ('+(Q.length-s)+')</span><span class="chip" data-f="ok">Correct ('+s+')</span></div><div id="akList"></div></div>';
+  const draw=f=>{
+    $('akList').innerHTML=Q.map((q,i)=>({q,i,ok:a[i]===q.c})).filter(o=>f==='all'||(f==='x'?!o.ok:o.ok)).map(({q,i,ok})=>
+      '<div class="ak '+(ok?'':'x')+'"><p>'+(i+1)+'. '+esc(q.q)+'</p><div class="y">Your answer: '+(a[i]!==undefined?esc(a[i]):'(none)')+' '+(ok?'✅':'❌')+'</div><div class="c">Correct: '+esc(q.c)+'</div>'+(ok?'':'<div class="rv2">Review: topic '+q.t+'. '+esc(T[q.t-1].t)+'</div>')+'</div>').join('')||'<p class="note">Nothing here.</p>';
+  };draw('all');
+  document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');draw(c.dataset.f)});
+  updateCool();window.scrollTo(0,0);
+  setTimeout(()=>{const r=$('spr');if(r)r.style.strokeDashoffset=471.2*(1-s/Q.length)},120);
+  if(pct>=75)boom();
+}
+
+/* confetti */
+function boom(){
+  const cv=$('confetti'),c=cv.getContext('2d');cv.classList.remove('hide');cv.width=innerWidth;cv.height=innerHeight;
+  const cols=['#2dd4bf','#60a5fa','#f59e0b','#34d399','#f472b6'];
+  const ps=Array.from({length:150},()=>({x:innerWidth/2,y:innerHeight/3,vx:(Math.random()-.5)*16,vy:-Math.random()*15-3,s:5+Math.random()*7,c:cols[Math.random()*5|0],r:Math.random()*6,vr:(Math.random()-.5)*.4}));
+  let f=0;(function loop(){
+    c.clearRect(0,0,cv.width,cv.height);
+    ps.forEach(p=>{p.vy+=.28;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;c.save();c.translate(p.x,p.y);c.rotate(p.r);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);c.restore()});
+    if(++f<190)requestAnimationFrame(loop);else{c.clearRect(0,0,cv.width,cv.height);cv.classList.add('hide')}
+  })();
+}
+
+/* Scroll progress bar */
+addEventListener('scroll',()=>{const h=document.documentElement;$('prog').style.width=(h.scrollTop/((h.scrollHeight-h.clientHeight)||1)*100)+'%'},{passive:true});
+
+/* Tab switch / leaving detection */
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&examActive)finish('tab')});
+window.addEventListener('blur',()=>{if(examActive)finish('tab')});
+window.addEventListener('pagehide',()=>{if(examActive){ls.set('pf345ExamLast',Date.now())}});
+
+/* If page was reloaded/closed during an exam: end it quietly */
+if(ls.get('pf345ExamState',null)){
+  let sa={};try{sa=JSON.parse(ls.get('pf345ExamAns','{}'))}catch(e){}
+  examActive=true;finish('reload',sa);
+}
+
+setTheme(ls.get('wfTheme','teal'));
+updStats();
+</script>
+<script type="module">
+const REDEEM_URL="https://bsit-study.vercel.app/api/redeemViewerTicket";
+const gate=document.getElementById("accessGate");
+const message=document.getElementById("accessMessage");
+
+function denyAccess(reason){
+  console.warn("Study material access denied:",reason);
+  document.documentElement.classList.remove("access-pending");
+  document.documentElement.classList.add("access-denied");
+  message.textContent="MUST ACCESS THROUGH BSIT_STUDY";
+  gate.setAttribute("aria-busy","false");
+}
+
+function showServiceError(error){
+  console.error("Unable to validate study material access.",error);
+  document.documentElement.classList.remove("access-pending");
+  document.documentElement.classList.add("access-denied");
+  message.textContent="Unable to verify access right now. Return to BSIT_STUDY and try opening this material again.";
+  gate.setAttribute("aria-busy","false");
+}
+
+async function validateViewerTicket(){
+  const url=new URL(location.href);
+  const ticket=url.searchParams.get("bsit_ticket");
+  const materialId=url.searchParams.get("bsit_material");
+  if(!ticket||!materialId){
+    denyAccess("ticket or material ID is missing");
+    return;
+  }
+  try{
+    const response=await fetch(REDEEM_URL,{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({ticket,materialId})
+    });
+    if(response.status===400||response.status===403){
+      denyAccess("the server rejected the ticket");
+      return;
+    }
+    if(!response.ok)throw new Error(`Ticket service returned HTTP ${response.status}`);
+
+    const result=await response.json();
+    if(result.valid!==true||result.materialId!==materialId){
+      denyAccess("the server returned an invalid ticket response");
+      return;
+    }
+
+    url.searchParams.delete("bsit_ticket");
+    url.searchParams.delete("bsit_material");
+    history.replaceState(history.state,"",url.pathname+url.search+url.hash);
+    document.documentElement.classList.remove("access-pending","access-denied");
+    document.documentElement.classList.add("access-granted");
+    gate.hidden=true;
+  }catch(error){
+    showServiceError(error);
+  }
+}
+
+validateViewerTicket();
+</script>
+</body>
+</html>
